@@ -53,7 +53,7 @@ const Footer = () => {
       <div className="mx-auto flex max-w-7xl flex-col gap-10">
 
         {/* Main Footer  */}
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-6">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
 
           {/* Logo  */}
           <div className="footer-logo">

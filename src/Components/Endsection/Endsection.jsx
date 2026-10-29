@@ -7,14 +7,14 @@ const EndSection = () => {
       {/* Customer Reviews */}
       <section className="reviews-section px-6 py-16">
         <div className="mb-10 text-center ">
-          <p className="text-4xl font-medium font-lobster-two  italic leading-15">Come & Join</p>
+          <p className="lg:text-4xl text-2xl font-medium font-lobster-two  italic leading-15">Come & Join</p>
 
-          <h2 className="text-4xl font-semibold">
+          <h2 className="lg:text-4xl text-3xl font-semibold">
             Our Happy Customers
           </h2>
         </div>
 
-        <div className="reviews-list flex items-center justify-center gap-10">
+        <div className="reviews-list flex items-center justify-center gap-10 flex-wrap ">
           {reviews.map((review) => (
             <CustomerCards
               key={review.id}
@@ -47,11 +47,11 @@ const EndSection = () => {
 
       {/* Newsletter */}
       <section className="newsletter-section flex w-full flex-col items-center justify-center bg-[#F2D4BC] px-6 py-12 text-center">
-        <h2 className="text-4xl font-semibold leading-tight">
+        <h2 className=" offer text-4xl font-semibold leading-tight ">
           Join In And Get 15% Off!
         </h2>
 
-        <p className="mt-3 text-xl font-medium">
+        <p className="mt-3 lg:text-xl text-sm font-medium">
           Subscribe to our Newsletter and get 15% off discount code
         </p>
 
@@ -67,12 +67,14 @@ const EndSection = () => {
             placeholder="Email Address"
             autoComplete="email"
             required
-            className="w-90 rounded-full bg-orange-50 px-4 py-2 font-medium text-black outline-none"
+            className="lg:w-90 w-60  rounded-full bg-orange-50 px-4 py-2 font-medium text-black outline-none"
           />
 
           <button
             type="submit"
-            className="rounded-full bg-amber-950 px-10 py-2 font-medium text-white transition-transform duration-200 hover:scale-105"
+            className="rounded-full bg-amber-950 lg:px-10 px-4 py-2 font-medium text-white transition-transform duration-200 hover:scale-105"onClick={()=>{
+              alert("Subscribed")
+            }}
           >
             Subscribe
           </button>

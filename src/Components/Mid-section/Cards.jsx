@@ -1,14 +1,24 @@
-const Cards = ({ product }) => {
-  const { name, info, price, image } = product;
+const Cards = ({ product, imageFit="contain" }) => {
+  
+ 
+ const name = product.name ?? product.title;
+ const info = product.info ?? product.description;
+ const image = product.image ?? product.images ??product.thumbnail;
+ const { price } = product;
 
   return (
-    <article className="product-card w-70 overflow-hidden p-2 rounded-2xl bg-stone-200 shadow-md">
+    <article className="product-card min-w-70   p-2 rounded-2xl flex-wrap   bg-stone-200 shadow-md">
       {/* Product Image */}
-      <div className="product-image h-60 w-full overflow-hidden rounded-2xl">
+      <div className="product-image  shrink-0 h-60 overflow-hidden group">
         <img
           src={image}
           alt={name}
-          className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+          className={`h-full w-full p-2  rounded-2xl  transition-transform duration-300 hover:scale-105 ${
+            imageFit === "cover"
+              ? "object-cover"
+             
+              : "object-contain"
+          }`}
         />
       </div>
 
@@ -29,7 +39,9 @@ const Cards = ({ product }) => {
 
           <button
             type="button"
-            className="product-button rounded-xl bg-amber-950 px-3 py-2 text-sm font-medium text-white transition-transform duration-200 hover:scale-105"
+            className="product-button rounded-xl bg-amber-950 px-3 py-2 text-sm font-medium text-white transition-transform duration-200 hover:scale-105 cursor-pointer"onClick={()=>{
+              alert("order placed")
+            }}
           >
             Order Now
           </button>

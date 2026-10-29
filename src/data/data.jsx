@@ -43,6 +43,7 @@ export const products = [
     price: 250,
   },
 
+
   {
     id: 5,
     category: "dessert",
@@ -82,6 +83,24 @@ export const products = [
     info: "Lorem ipsum dolor sit amet consectetur.",
     price: 300,
   },
+   {
+    id: 9,
+    category: "coffee",
+    image:
+      "https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?q=80&w=714&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    name: "Iced Coffee",
+    info: "Lorem ipsum dolor sit amet consectetur.",
+    price: 200,
+  },
+   {
+    id: 10,
+    category: "dessert",
+    image:
+      "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    name: "Brownies",
+    info: "Lorem ipsum dolor sit amet consectetur.",
+    price: 150,
+  },
 ];
 
 
@@ -96,6 +115,7 @@ export const reviews = [
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop",
     username: "Campbell",
     intro: "Artist",
+    rating:4,
     msg: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, culpa.",
   },
 
@@ -105,6 +125,7 @@ export const reviews = [
       "https://images.unsplash.com/photo-1466112928291-0903b80a9466?q=80&w=1173&auto=format&fit=crop",
     username: "Eddy Lackmann",
     intro: "Entrepreneur",
+    rating:5,
     msg: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, culpa.",
   },
 
@@ -114,6 +135,7 @@ export const reviews = [
       "https://images.unsplash.com/photo-1587723958656-ee042cc565a1?q=80&w=687&auto=format&fit=crop",
     username: "Marin Tudo",
     intro: "Professional",
+    rating:4,
     msg: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, culpa.",
   },
 ];

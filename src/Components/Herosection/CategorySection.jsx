@@ -2,6 +2,12 @@ import { PiCoffeeFill } from "react-icons/pi";
 import { MdCake } from "react-icons/md";
 import { TbCookie } from "react-icons/tb";
 import { BiSolidCoffeeTogo } from "react-icons/bi";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(useGSAP,ScrollTrigger);
 
 const CATEGORIES = [
   {
@@ -27,25 +33,48 @@ const CATEGORIES = [
 ];
 
 const CategorySection = () => {
+  const categoryRef = useRef(null)
+
+  useGSAP(()=>{
+    const elements = categoryRef.current.querySelectorAll(".category-icon")
+    gsap.from(elements, {
+      y: -100,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.2,
+     
+
+      scrollTrigger: {
+        trigger: categoryRef.current,
+        start: "top 70%",
+        toggleActions: "play none none none ",
+      },
+    });
+  })
   return (
-    <section className="category-section flex min-h-40 w-full items-center justify-center gap-12 bg-[#F2D4BC] px-6 font-poppins md:gap-26">
+    
+    <section ref={categoryRef}  className="category-section flex lg:min-h-40  items-center justify-center gap-6 bg-[#F2D4BC] px-6 font-poppins lg:gap-26 md:gap-20">
       {CATEGORIES.map((category) => {
         const Icon = category.icon;
 
         return (
-          <div
+          <div 
             key={category.id}
-            className="category flex h-30 w-30 flex-col items-center justify-center"
+            className="category flex h-30  flex-col items-center md:items-center justify-center"
           >
-            <Icon className="category-icon h-20 w-20 text-[#751b0e]" />
+            
+            
+            <Icon className="category-icon lg:h-20 h-10 lg:w-20 w-10 text-[#751b0e]" />
 
-            <h2 className="category-title text-lg text-[#751b0e]">
+            <h2 className="category-title text-center lg:text-lg text-sm text-[#751b0e]">
               {category.name}
             </h2>
           </div>
+          
         );
       })}
     </section>
+   
   );
 };
 

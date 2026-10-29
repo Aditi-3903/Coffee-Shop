@@ -7,5 +7,31 @@
    
 }
 
+@media screen and (max-width:480px) {
+    .hero-content{
+  align-items: center;
+    min-width: 290px;
+    
+   
+}
+  .beans-banner{
+    flex-direction: column;
+    align-items: center;
+     justify-content: space-between;
+     gap: 10px;
+  }
+
+  .category{
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+
+
+.menu-link{
+  @apply text-[10vw] lg:hidden md:text-2xl sm:text-2xl font-medium uppercase lg:opacity-60 hover:opacity-100
+}
 
 
